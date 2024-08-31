@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
+import Header from '../../components/header';
 import CardJogos from '../../components/cardJogos'; 
+import Footer from '../../components/footer';
 import { useState, useEffect } from 'react';
-
 
 export default function HomeIndex() {
   const [jogos, setJogos] = useState([]);
@@ -21,7 +22,7 @@ export default function HomeIndex() {
 
   return (
     <View style={styles.container}>
-      
+      <Header></Header>
 
       <View style={{ width: "90%" }}>
         <FlatList
@@ -33,12 +34,17 @@ export default function HomeIndex() {
             <CardJogos
               titulo={item.name} 
               imagem={item.background_image} 
-              nota={item.metacritic} 
+              avaliacao={item.rating} 
               data={item.released}
+              plataformas={item.platforms.map(p => p.platform.name).join(', ')}
+              generos={item.genres.map(g => g.name).join(', ')} 
+              tags={item.tags.map(t => t.name).join(', ')} 
+              screenshots={item.short_screenshots}
             />
           )}
         />
       </View>
+      <Footer></Footer>
     </View>
   );
 }
@@ -46,7 +52,8 @@ export default function HomeIndex() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#46b5bd',
-    alignItems: 'center'
+    backgroundColor: '#2d2d3b',
+    alignItems: 'center',
+    gap: 12
   },
 });

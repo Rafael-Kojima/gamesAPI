@@ -11,7 +11,7 @@ export default function Routes() {
     <NavigationContainer>
       <stack.Navigator>
           <stack.Screen name= 'Home' component = {Home} options={{ headerShown: false }}/>
-          <stack.Screen name= 'Details' component = {Details}/>
+          <stack.Screen name= 'Details' component = {Details} options={{ headerShown: false }}/>
 
       </stack.Navigator>
     </NavigationContainer>
