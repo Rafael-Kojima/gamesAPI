@@ -52,7 +52,7 @@ export default function HomeIndex() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2d2d3b',
+    backgroundColor: '#2A55A6',
     alignItems: 'center',
     gap: 12
   },

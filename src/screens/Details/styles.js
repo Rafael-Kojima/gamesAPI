@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   },
   viewContainer: {
     flex: 1,
-    backgroundColor: '#2d2d3b',
+    backgroundColor: '#2A55A6',
     padding: 16,
   },
   imageBanner: {
